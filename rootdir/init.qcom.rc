@@ -408,8 +408,9 @@ service macaddrsetup /system/bin/macaddrsetup /sys/devices/platform/bcmdhd_wlan/
     class late_start
     user root
     oneshot
+
 service netmgrd /system/bin/netmgrd
-    class main
+    class late_start
 
 on property:ro.radio.noril=true
     stop ril-daemon
@@ -489,9 +490,8 @@ service bugreport /system/bin/dumpstate -d -p -B \
 
 # Modem Log QMI service
 service mlog_qmi_service /system/bin/mlog_qmi_service
+	class late_start
     user root
-    class main
-    disabled
 
 # Thermal Manager service
 service thermanager /system/bin/thermanager /system/etc/thermanager.xml
@@ -575,13 +575,13 @@ service mediadrm /system/bin/mediadrmserver
     seclabel u:r:uim:s0
 
 service imsqmidaemon /system/bin/imsqmidaemon
-    class main
+    class late_start
     user system
     socket ims_qmid stream 0660 system radio
     group radio net_raw log qcom_diag
 
 service imsdatadaemon /system/bin/imsdatadaemon
-    class main
+    class late_start
     user system
     socket ims_datad stream 0660 system radio
     group system wifi radio inet net_raw log qcom_diag net_admin
@@ -593,14 +593,14 @@ on property:sys.ims.DATA_DAEMON_STATUS=1
 
 
 service ims_rtp_daemon /system/bin/ims_rtp_daemon
-   class main
+   class late_start
    user system
    socket ims_rtpd stream 0660 system radio
    group radio net_raw diag qcom_diag log inet
    disabled
 
 service imscmservice /system/bin/imscmservice
-   class main
+   class late_start
    user system
    group radio net_raw diag qcom_diag log
    disabled
