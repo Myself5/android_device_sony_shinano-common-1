@@ -67,5 +67,10 @@
 
         <!-- Input devices -->
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" alias="handset-mic-asr" />
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" alias="handset-mic-asr" />
+        <device name="SND_DEVICE_IN_VOIP_HANDSET_MIC" alias="handset-mic" />
+        <device name="SND_DEVICE_IN_VOIP_SPEAKER_MIC" alias="voice-speaker-mic" />
+        <device name="SND_DEVICE_IN_VOIP_HEADSET_MIC" alias="voice-headset-mic" />
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC_BROADSIDE" alias="speaker-dmic-broadside" />
     </device_names>
 </audio_platform_info>
