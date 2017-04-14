@@ -44,3 +44,9 @@ allow iddd iddd_file:dir create;
 allow iddd proc:file { getattr open read };
 
 allow iddd tmpfs:dir search;
+
+#============= vold ==============
+allow vold iddd_file:dir read;
+allow vold iddd_file:dir open;
+allow vold iddd_file:dir ioctl;
+

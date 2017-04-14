@@ -26,6 +26,10 @@ allow scd scd_data:file { getattr open read write create };
 allow scd socket_device:dir { add_name remove_name write };
 allow scd socket_device:sock_file { create getattr setattr unlink write };
 allow scd sysfs:file { getattr open read };
+allow scd system_data_file:dir write;
+allow scd system_data_file:dir create;
+allow scd system_data_file:dir add_name;
+
 
 #============= wv ==============
 allow wv ion_device:chr_file { ioctl open read };
