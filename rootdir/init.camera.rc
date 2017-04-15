@@ -94,9 +94,6 @@ on post-fs-data
     chown media camera /sys/devices/sony_camera_1/info
     chmod 0770 /sys/devices/sony_camera_1/info
 
-    # SONY: Import MiscTA to System properties
-    exec -- /system/bin/taimport property
-
     #Wait /data to init credmgrd
     start initcredmgr
  
